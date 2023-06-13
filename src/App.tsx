@@ -1,19 +1,22 @@
 import { Grid, GridItem, HStack } from "@chakra-ui/react";
-import City from "./components/City";
+import Header from "./components/Header";
 
 function App() {
   return (
     <Grid
       templateAreas={{
-        base: `"nav" "city" "temp" "sky"`,
-        lg: `"nav city" "temp sky"`, //1024px
+        base: `"header" "nav" "city" "temp" "sky"`,
+        lg: `"header header" "nav city" "temp sky"`, //1024px
       }}
     >
+      <GridItem area={"header"}>
+        <Header/>
+      </GridItem>
       <GridItem area={"nav"} bg={"coral"}>
         Nav
       </GridItem>
-      <GridItem area={"city"}>
-        <City/>
+      <GridItem area={"city"} bg={"brown"}>
+        City
       </GridItem>
       <GridItem area={"temp"} bg={"dodgerblue"}>
         Temp
